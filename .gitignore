@@ -1,4 +1,13 @@
 # Build and Release Folders
+.DS_Store
+vendor
+/node_modules
+.env
+.env.*.local
+dashboard/.env.js
+.env.js
+sitemap.xml
+
 bin-debug/
 bin-release/
 [Oo]bj/

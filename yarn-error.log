@@ -1,0 +1,52 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\henry\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Users\henry\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\henry\bin;C:\Program Files\ImageMagick-6.9.12-Q8;C:\Program Files\Python37\Scripts;C:\Program Files\Python37;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\xampp\php;C:\composer;C:\Program Files\nodejs;C:\Users\henry\AppData\Roaming\Composer\vendor\bin;A:\Programas\Microsoft VS Code\bin;C:\Python31\python;A:\laragon\etc\php\pear;C:\Program Files\Python37;C:\Program Files\Tesseract-OCR\tesseract.exe;C:\Users\henry\AppData\Roaming\npm;C:\Program Files\heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  12.22.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
+
+npm manifest: 
+  {
+      "private": true,
+      "scripts": {
+          "dev": "npm run development",
+          "development": "mix",
+          "watch": "mix watch",
+          "watch-poll": "mix watch -- --watch-options-poll=1000",
+          "hot": "mix watch --hot",
+          "prod": "npm run production",
+          "production": "mix --production"
+      },
+      "devDependencies": {
+          "axios": "^0.21",
+          "bootstrap": "^4.6.0",
+          "jquery": "^3.6",
+          "laravel-mix": "^6.0.6",
+          "lodash": "^4.17.19",
+          "popper.js": "^1.16.1",
+          "postcss": "^8.1.14",
+          "resolve-url-loader": "^3.1.2",
+          "sass": "^1.32.11",
+          "sass-loader": "^11.0.1",
+          "vue": "^2.6.12",
+          "vue-template-compiler": "^2.6.12"
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
