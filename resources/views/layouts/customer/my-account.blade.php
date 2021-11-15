@@ -17,6 +17,11 @@
   <!-- Page plugins -->
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{ asset('vendors/argon/assets/css/argon.css?v=1.2.0') }}" type="text/css">
+  <style type="text/css">
+    .text-muted{
+        color: red !important;
+    }
+  </style>
 </head>
 
 <body>      
@@ -28,6 +33,7 @@
   <!-- Argon Scripts -->
   <!-- Core -->
   <script src="{{ asset('vendors/argon/assets/vendors/jquery/dist/jquery.min.js') }}"></script>
+  <script src="{{ asset('vendors/argon/assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
   <script src="{{ asset('vendors/argon/assets/vendors/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
   <script src="{{ asset('vendors/argon/assets/vendors/js-cookie/js.cookie.js') }}"></script>
   <script src="{{ asset('vendors/argon/assets/vendors/jquery.scrollbar/jquery.scrollbar.min.js') }}"></script>

@@ -23,6 +23,7 @@ use App\Traits\Files\HandlerFiles;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Facades\Storage;
 use Artisan;
+use App\Rules\MatchOldPassword;
 
 
 class UsersController extends Controller
@@ -161,16 +162,22 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show(Request $request, $id, $token)
     {
         $user = null; 
         if ($request->isMethod('GET')) {
-            $user = new UserResource(User::findOrFail($id));
-            return response()->json([
-                'status' => 200,
-                'message' => 'Resource Successfull',
-                'user' => $user
-            ]);  
+            if (Auth::user()->token_login == $token) {
+                $user = new UserResource(User::findOrFail($id));
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'Resource Successfull',
+                    'user' => $user
+                ]); 
+            }else{
+                 return response()->json([
+                    'message' => 'Invalid Token!'
+                ]); 
+            } 
         }else{
              return response()->json([
                 'status' => 400,
@@ -188,12 +195,12 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UserUpdateRequest $request, $id)
+    public function update(UserUpdateRequest $request, $id, $token)
     {
         //Update users admin, author 
         $user = null;
         if ($request->isMethod("POST")) {
-          
+            if (Auth::user()->token_login == $token) {
                 $user = User::findOrFail($id);
                 $user->country_id = $request->country_id;
                 $user->state_id = $request->state_id;
@@ -221,7 +228,11 @@ class UsersController extends Controller
                     'user' => $user
                 ]);
             
-
+            }else{
+                return response()->json([
+                    'message' => 'Invalid Token!'
+                ]);
+            }
         }else{
             return response()->json([
                 'status' => 400,
@@ -322,6 +333,37 @@ class UsersController extends Controller
                 'message' => 'Item Destroyed to data base',
             ], 200);
         }
+    }
+
+
+
+    public function changePassword(Request $request, $token)
+    {
+
+        if (Auth::user()->token_login == $token) {
+            $request->validate([
+                'current_password' => ['required', new \App\Rules\MatchOldPassword],
+                'password' => ['required'],
+                'password_confirm' => ['same:password'],
+            ]);
+
+            $userAutId = Auth::id();
+            $customer = User::findOrFail($userAutId);
+            $customer->password = Hash::make($request['password']);
+            $customer->update();
+
+            //sendEmailChangePassword
+
+            return response()->json([
+                'message' => 'Has actualizado tu contraseña exitosamente'
+            ]);
+        }else{
+            return response()->json([
+                'message' => 'Invalid Token!'
+            ]);
+        }
+     
+       
     }
 
     

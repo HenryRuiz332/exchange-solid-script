@@ -44,10 +44,12 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
                 Route::group(['namespace' => 'Users'], function(){
 
                     Route::resource('/users', 'UsersController');
-                    Route::post('/users/{id}', 'UsersController@update');
+                    Route::post('/users/{id}/{token}', 'UsersController@update');
+                    Route::get('/users/{id}/{token}', 'UsersController@show');
                     Route::post('/users-delete', 'UsersController@trashAll');
                     Route::post('/users-trash/{id}', 'UsersController@sendTrash');
                     Route::post('/users-restore/{id}', 'UsersController@restore');
+                    Route::post('/update-password/{token}', 'UsersController@changePassword');
 
                     Route::resource('/direcciones', 'DireccionesController');
                     Route::post('/direcciones-delete', 'DireccionesController@trashAll');
