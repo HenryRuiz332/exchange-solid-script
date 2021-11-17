@@ -27,9 +27,9 @@ Vue.prototype.$errorbvToast = function (append = false, variant = null) {
 };
 
 
-Vue.prototype.$deletebvToast = function (append = false, variant = null) {
+Vue.prototype.$deletebvToast = function (message, append = false, variant = null) {
     this.toastCount++
-    this.$bvToast.toast(`Has borrado`, {
+    this.$bvToast.toast(message, {
         title: `Modulo actualizado. Item borrado`,
         autoHideDelay: 10000,
         appendToast: append,

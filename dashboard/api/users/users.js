@@ -15,11 +15,12 @@ export const users = {
 
                formUser: new Form({
                     id: '',
-                    nombre :'',
-                    apellido_materno :'',
-                    apellido_paterno :'',
-                    email :'',
-                    telefono :'',
+                    name: '',
+                    last_name: '',
+                    username: '',
+                    email: '',
+                    phone: '',
+                    document: '',
                     
                }),
               
@@ -32,7 +33,7 @@ export const users = {
      },
      computed: {
           formTitle () {
-               return this.editIndexObj === -1 ? 'Nuevo Cliente' : 'Editar Cliente'
+               return this.editIndexObj === -1 ? 'New User' : 'Edit User'
           },
           titleCrud(){
                this.title = this.nameModule

@@ -41,7 +41,7 @@
                       </a>
                     </li>
                    
-                    <li class="nav-item">
+                   <!--  <li class="nav-item">
                       <a class="nav-link" href="examples/tables.html">
                         <i class="ni ni-bullet-list-67 text-default"></i>
                         <span class="nav-link-text">Tables</span>
@@ -64,16 +64,16 @@
                         <i class="ni ni-send text-dark"></i>
                         <span class="nav-link-text">Upgrade</span>
                       </a>
-                    </li>
+                    </li> -->
                   </ul>
                   <!-- Divider -->
                   <hr class="my-3">
                   <!-- Heading -->
-                  <h6 class="navbar-heading p-0 text-muted">
+                 <!--  <h6 class="navbar-heading p-0 text-muted">
                     <span class="docs-normal">Documentation</span>
-                  </h6>
+                  </h6> -->
                   <!-- Navigation -->
-                  <ul class="navbar-nav mb-md-3">
+                  <!-- <ul class="navbar-nav mb-md-3">
                     <li class="nav-item">
                       <a class="nav-link" href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html" target="_blank">
                         <i class="ni ni-spaceship"></i>
@@ -104,7 +104,7 @@
                         <span class="nav-link-text">Upgrade to PRO</span>
                       </a>
                     </li>
-                  </ul>
+                  </ul> -->
                 </div>
               </div>
             </div>

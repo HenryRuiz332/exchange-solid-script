@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\Users;
+namespace App\Http\Requests\Frontend\Users;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserUpdateRequest extends FormRequest
+class BanksAccountsCreatedRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,14 @@ class UserUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'string|required|min:4|max:50',
-            'username' => 'string|required|min:4|max:30',
-            'email' => 'required|unique:users,email,' . $this->id,
+
+            'bank_id' => 'numeric|required',
+            'name_user_account' => 'string|required|min:4|max:30',
+            'account_number' => 'numeric|required|unique:bank_accounts',
             'document' => 'required|digits_between:7,9',
-            'phone' => 'required|digits_between:1,10|numeric',
+            'type' => 'required|string',
+            // 'code' => 'digits_between:1,4|numeric',
+            // 'phone' => 'numeric|digits_between:8,9',
         ];
     }
 }

@@ -1,7 +1,7 @@
 <template>
 	<div>
-        
-		<div class="iq-card iq-card-block iq-card-stretch p-3 text-white" >
+        exchnge
+		<!-- <div class="iq-card iq-card-block iq-card-stretch p-3 text-white" >
 
 			<v-row>
 				<v-col cols="12" xs="12" sm="12" md="12" lg="12" xl="12">
@@ -87,27 +87,27 @@
                              
                               />
           </v-dialog>
-
+ -->
 	</div>
 </template>
 
 <script>
-     import NotificationCrud from './../../../../global_components/admin/crud/NotificationCrud' 
-     import CrudControls from './../../../../global_components/admin/crud/CrudControls' 
-     import DialogDelete from './../../../../global_components/admin/crud/DialogDelete' 
-     import FormUser from './partials_module/Form'
+     // import NotificationCrud from './../../../../global_components/admin/crud/NotificationCrud' 
+     // import CrudControls from './../../../../global_components/admin/crud/CrudControls' 
+     // import DialogDelete from './../../../../global_components/admin/crud/DialogDelete' 
+     // import FormUser from './partials_module/Form'
 
-     import { users } from './../../../../api/users/users' 
+     // import { users } from './../../../../api/users/users' 
 
 	export default{
-          mixins: [users],
-          components:{
-               NotificationCrud,
-               CrudControls,
-               DialogDelete,
-               FormUser,
+          // mixins: [users],
+          // components:{
+          //      NotificationCrud,
+          //      CrudControls,
+          //      DialogDelete,
+          //      FormUser,
               
-          },
+          // },
 		props:{
 			nameModule: String
 		},

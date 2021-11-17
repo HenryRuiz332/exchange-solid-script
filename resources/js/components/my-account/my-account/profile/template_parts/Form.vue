@@ -67,8 +67,8 @@
                 </b-form-checkbox-group>
               </b-form-group> -->
 
-                <b-button type="submit" variant="primary" v-show="!this.formProfile.progress">Actualizar</b-button>
-                <b-button type="button" class="disabledButton" variant="primary" v-show="this.formProfile.progress" disabled>Actualizar</b-button>
+                <b-button type="submit" variant="outline-primary" v-show="!this.formProfile.progress">Actualizar</b-button>
+                <b-button type="button" class="disabledButton" variant="outline-primary" v-show="this.formProfile.progress" disabled>Actualizar</b-button>
        
             </b-form>       
          </div>
@@ -102,8 +102,8 @@
                     </b-form-input>
                     
                 </b-form-group>
-                <b-button type="submit" variant="primary" v-show="!this.formPassword.progress" @click="updatePassword">Actualizar Contraseña</b-button>
-                <b-button type="button" class="disabledButton" variant="primary" v-show="this.formPassword.progress" disabled>Actualizar Contraseña</b-button>
+                <b-button type="submit" variant="outline-primary" v-show="!this.formPassword.progress" @click="updatePassword">Actualizar Contraseña</b-button>
+                <b-button type="button" class="disabledButton" variant="outline-primary" v-show="this.formPassword.progress" disabled>Actualizar Contraseña</b-button>
             
         </div>
         

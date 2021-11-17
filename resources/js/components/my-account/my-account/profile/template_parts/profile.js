@@ -73,7 +73,7 @@ export const profile = {
                 // Trick to reset/clear native browser formProfile validation state
                 
                 this.$nextTick(() => {
-                  this.show = true
+                  
                 })
           },
           getProfile(){
@@ -106,12 +106,11 @@ export const profile = {
                .then(response => {
                     if (response.status == 200) {
                          this.$successbvToast('Perfil actualizado! ') 
-                          this.show = false
+                          
                     }
                   
                })
                .catch(e => {
-                     this.show = false
                     this.$errorbvToast()
                })
           },

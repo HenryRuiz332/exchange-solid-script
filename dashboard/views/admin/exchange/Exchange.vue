@@ -1,14 +1,14 @@
 <template>
 	<div>
-		<UsersComponent :nameModule="nameModule" />
+		<ExchangeComponent :nameModule="nameModule" />
 	</div>
 </template>
 
 <script>
-	import UsersComponent from '../../../components/admin/pages/users/UsersComponent.vue'
+	import ExchangeComponent from '../../../components/admin/pages/exchange/ExchangeComponent.vue'
 	export default{
     	components: {
-    		UsersComponent
+    		ExchangeComponent
     	},
     	data:() => ({
     		nameModule: 'Users'

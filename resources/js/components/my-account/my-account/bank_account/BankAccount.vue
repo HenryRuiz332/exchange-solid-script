@@ -6,7 +6,7 @@
             <div class="header-body">
               <div class="row align-items-center py-4">
                 <div class="col-lg-6 col-7">
-                  <h6 class="h2 text-white d-inline-block mb-0">Cuentas Bancarias</h6>
+                  <h6 class="h2 text-white d-inline-block mb-0">Cuentas </h6>
                   <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                     <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                         <li class="breadcrumb-item">
@@ -21,7 +21,7 @@
                  <!--  <a href="#" class="btn btn-sm btn-neutral">New</a>
                   <a href="#" class="btn btn-sm btn-neutral">Filters</a> -->
                   
-                  <img class="d-none d-md-inline-block " src="/vendors/undraw/profile.svg" width="150" height="150">
+                  <img class="d-none d-md-inline-block " src="/vendors/undraw/banks.svg" width="150" height="150">
                 </div>
               </div>
             </div>
@@ -30,24 +30,36 @@
 
 
         <div class="container-fluid mt-3">
-          
-           
-               
-           
+            <FormBankAccount 
+                :formBankAccount="formBankAccount" 
+                :formBankAccountMovil="formBankAccountMovil" 
+                :cleanFormBankAccount="cleanFormBankAccount"
+                :saveBankAccount="saveBankAccount"
+                :saveBankAccountMovil="saveBankAccountMovil"
+                :banks="banks"
+                :banksAccounts="banksAccounts"
+                :getBanksAccounts="getBanksAccounts"
+                :pagination="pagination"
+                :editFormBankAccount="editFormBankAccount"
+                :editMode="editMode"
+                :updateBankAccount="updateBankAccount"
+                :deleteObj="deleteObj"
+                
+                />
         </div>
     </div>
     
 </template>
 
 <script>
-    // import FormProfile from './template_parts/Form'
-    // import { profile } from './template_parts/profile' 
+    import FormBankAccount from './template_parts/Form'
+    import { banks_accounts } from './template_parts/banks_accounts' 
 
     export default {
-        // mixins: [profile],
-        // components:{
-        //     FormProfile
-        // },
+        mixins: [banks_accounts],
+        components:{
+             FormBankAccount
+        },
         data:() =>({
             
             

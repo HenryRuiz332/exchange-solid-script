@@ -27,15 +27,7 @@
                                         id="exampleInputEmail1" 
                                         placeholder="Correo Electrónico">
                                 </div>
-                                <div class="form-group text-left">
-                                    <label for="exampleInputEmail1" class="mr-auto"  style="color:#009ADA">Alias</label>
-                                    <input 
-                                        v-model="form.alias"
-                                        type="email" 
-                                        class="form-control mb-0" 
-                                        id="exampleInputEmail1" 
-                                        placeholder="Ingrese un Alias de 5 a 10 caracteres">
-                                </div>
+                               
                                 <div class="form-group text-left">
                                     <label for="exampleInputPassword1"  style="color:#009ADA">Contraseña</label>
                                     <input 

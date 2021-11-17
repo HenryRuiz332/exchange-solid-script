@@ -3,7 +3,7 @@
 	<nav aria-label="...">
 		<ul class="pagination justify-content-center">
 			<li class="page-item" :class="{ disabled: pagination.current_page <= 1 }">
-				<a class="page-link" @click.prevent="changePage(1)">First
+				<a class="page-link" @click.prevent="changePage(1)"><<
 				</a>
 			</li>
 
@@ -26,7 +26,7 @@
 			</li>
 
 			<li class="page-item" :class="{ disabled: pagination.current_page >= pagination.last_page }">
-				<a class="page-link" @click.prevent="changePage(pagination.last_page)">Last
+				<a class="page-link" @click.prevent="changePage(pagination.last_page)">>>
 				</a>
 			</li>
 
@@ -93,8 +93,8 @@
 	.page-item.active .page-link {
 	    z-index: 3;
 	    color: #000;
-	    background-color: #9E7AF3!important;
-	    border-color: #9E7AF3;
+	    background-color: #009ADA!important;
+	    border-color: #009ADA;
 	    cursor:  auto;
 
 	}

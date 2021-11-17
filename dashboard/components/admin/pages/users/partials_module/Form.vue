@@ -14,25 +14,25 @@
                                  		<v-col cols="12"xs="12" sm="12" md="12" lg="12" xl="12">
                                  			<v-text-field
                                  				dark
-	                                           v-model="formUser.nombre"
-	                                           label="Nombre"
-	                                           :error-messages="errors.errors.nombre ? errors.errors.nombre[0] : null">
+	                                           v-model="formUser.name"
+	                                           label="Name"
+	                                           :error-messages="errors.errors.name ? errors.errors.name[0] : null">
 	                                                
 	                                      </v-text-field>
                                  		</v-col>
 	                                 	<v-col cols="12"xs="12" sm="12" md="12" lg="12" xl="12">
 		                                 	<v-text-field
 		                                 		dark
-		                                        v-model="formUser.apellido_materno"
-		                                        label="Apellido materno">
+		                                        v-model="formUser.last_name"
+		                                        label="Last Name">
 		                                        
 		                                   	</v-text-field>
 		                            	</v-col>
 		                            	<v-col cols="12"xs="12" sm="12" md="12" lg="12" xl="12">
 			                                 <v-text-field
 			                                 	dark
-			                                      v-model="formUser.apellido_paterno"
-			                                      label="Apellido paterno">
+			                                      v-model="formUser.document"
+			                                      label="Document">
 			                                           
 			                             </v-text-field>
 			                            </v-col>
@@ -50,10 +50,10 @@
 			                            <v-col cols="12"xs="12" sm="12" md="12" lg="12" xl="12">
 			                                      	<v-text-field
 			                                      		dark
-			                                           v-model="formUser.telefono"
-			                                           label="Teléfono"
+			                                           v-model="formUser.phone"
+			                                           label="Phone"
 			                                           :counter="10"
-			                                           :error-messages="errors.errors.telefono ? errors.errors.telefono[0] : null">
+			                                           :error-messages="errors.errors.phone ? errors.errors.phone[0] : null">
 			                                                
 			                                        </v-text-field>
 			                            </v-col>
