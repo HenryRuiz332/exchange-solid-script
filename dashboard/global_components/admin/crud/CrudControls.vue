@@ -73,7 +73,7 @@
                          color: '#9F7AF3',
                          method: this.openDialogControl,
                          iconClass : 'fa fa-plus pr-0',
-                         infoTooltip : 'Nuevo ' + this.nameComponent,
+                         infoTooltip : 'New ' + this.nameComponent,
                          show: true
                          
                        
@@ -83,7 +83,7 @@
                          color: '#1A237E',
                          method: this.getFuntion,
                          iconClass : 'fa fa-refresh',
-                         infoTooltip : 'Recargar',
+                         infoTooltip : 'Reload',
                          show: true
                         
                         

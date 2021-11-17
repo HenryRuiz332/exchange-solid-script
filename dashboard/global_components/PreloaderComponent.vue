@@ -9,7 +9,7 @@
                color="#9C7AF3"
                >
                <v-card-text>
-                             <span style="color:white!important">Por favor espere... Cargando</span><br>
+                             <span style="color:white!important">Loading...</span><br>
                     <v-progress-circular
                class="mt-4"
                :width="3"

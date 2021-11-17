@@ -51,12 +51,28 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
                     Route::post('/users-restore/{id}', 'UsersController@restore');
                     Route::post('/update-password/{token}', 'UsersController@changePassword');
 
-                    Route::resource('/direcciones', 'DireccionesController');
-                    Route::post('/direcciones-delete', 'DireccionesController@trashAll');
+                    Route::get('/banks-accounts/{token}', 'BanksAccountsController@index');
+                    Route::post('/banks-accounts/{token}', 'BanksAccountsController@store');
+                    Route::post('/banks-accounts-m/{token}', 'BanksAccountsController@storeM');
+                    Route::put('/banks-accounts/{id}/{token}', 'BanksAccountsController@update');
+                    Route::delete('/banks-accounts/{id}/{token}', 'BanksAccountsController@destroy');
+                    Route::post('/banks-accounts-deletes/{id}/{token}', 'BanksAccountsController@trashAll');
+                   
                 });
 
-                //CategoriesController, TagsController
-              
+                //
+                //UsersController
+                Route::group(['namespace' => 'Exchange'], function(){
+                    Route::get('/exchange/commissions/{token}', 'CommissionsController@index');
+                    Route::get('/exchange/commissions/{id}/{token}', 'CommissionsController@show');
+                    Route::post('/exchange/commissions/{token}', 'CommissionsController@store');
+                    Route::put('/exchange/commissions/{id}/{token}', 'CommissionsController@update');
+                    Route::delete('exchange/commissions/{id}/{token}', 'CommissionsController@destroy');
+                    Route::post('/exchange/commissions-deletes/{token}', 'CommissionsController@trashAll');
+                    // Route::post('/exchange/comissions-trash/{id}', 'ComissionsController@sendTrash');
+                    // Route::post('/exchange/comissions-restore/{id}', 'ComissionsController@restore');
+                   
+                });
                
             });
             

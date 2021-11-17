@@ -3,30 +3,44 @@ export const menu_sidebar = {
           return {
                items: [
                    
-
-
-
                     {      
-                         idEvent: 'clients',
-                         menu: 'Clients',
+                         idEvent: 'users',
+                         menu: 'Users',
                          path: '#',
                          icon: 'fa fa-user-friends',
-                         nvUrl: '/dashboard/clients/'+ localStorage.getItem('session_app'),
+                         nvUrl: '/dashboard/users/'+ localStorage.getItem('session_app'),
                          children: [
                               {   
-                                   idEvent: 'clients',
-                                   menu: 'Todos los clientes',
-                                   path: '/dashboard/clients/'+ localStorage.getItem('session_app'),
+                                   idEvent: 'users',
+                                   menu: 'Users',
+                                   path: '/dashboard/users/'+ localStorage.getItem('session_app'),
                                    icon: 'fa fa-users',  
                               },
-                              {   
-                                   idEvent: 'clients',
-                                   menu: 'Direcciones',
-                                   path: '/dashboard/direcciones/'+ localStorage.getItem('session_app'),
-                                   icon: 'fa fa-user-tag',  
-                              },
-                             
+                         ]
+             
+             
 
+                    },
+
+                    {      
+                         idEvent: 'exchange',
+                         menu: 'Exchange',
+                         path: '#',
+                         icon: 'fa fa-rocket',
+                         nvUrl: '/dashboard/exchange/'+ localStorage.getItem('session_app'),
+                         children: [
+                              {   
+                                   idEvent: 'exchange',
+                                   menu: 'Exchange',
+                                   path: '/dashboard/exchange/'+ localStorage.getItem('session_app'),
+                                   icon: 'fa fa-rocket',  
+                              },
+                              {   
+                                   idEvent: 'exchange',
+                                   menu: 'Commissions',
+                                   path: '/dashboard/exchange/commissions/'+ localStorage.getItem('session_app'),
+                                   icon: 'fa fa-calculator',  
+                              },
                          ]
              
              

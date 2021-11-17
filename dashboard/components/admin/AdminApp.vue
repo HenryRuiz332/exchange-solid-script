@@ -23,7 +23,7 @@
                         <router-view 
                             :sessionToken="appGetProperties.session" 
                              :visitors="appGetProperties.pagesVisited*1"
-                           
+                            :token="localStorageSessionApp"
                             :usersRegistered="appGetProperties.usersRegistered*1" 
                             ></router-view>
                     </keep-alive>

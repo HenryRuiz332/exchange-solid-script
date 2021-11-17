@@ -17,7 +17,7 @@ Vue.prototype.$successbvToast = function (message, append = false, variant = nul
     this.toastCount++
      // this.$bvToast.toast(`Module Update Successfully ${this.toastCount}`
     this.$bvToast.toast(message, {
-        title: `Actualizado`,
+        title: `Success`,
         autoHideDelay: 10000,
         appendToast: append,
         solid: true,
@@ -26,11 +26,11 @@ Vue.prototype.$successbvToast = function (message, append = false, variant = nul
     })
 };
 
-Vue.prototype.$errorbvToast = function (append = false, variant = null) {
+Vue.prototype.$errorbvToast = function (message, append = false, variant = null) {
     
     this.toastCount++
-    this.$bvToast.toast(`Verifique los campos`, {
-        title: `Error en al enviar datos`,
+    this.$bvToast.toast(message, {
+        title: `Error`,
         autoHideDelay: 10000,
         appendToast: append,
         solid: true,
@@ -40,10 +40,10 @@ Vue.prototype.$errorbvToast = function (append = false, variant = null) {
 };
 
 
-Vue.prototype.$deletebvToast = function (append = false, variant = null) {
+Vue.prototype.$deletebvToast = function (message, append = false, variant = null) {
     this.toastCount++
-    this.$bvToast.toast(`Has borrado`, {
-        title: `Modulo actualizado. Item borrado`,
+    this.$bvToast.toast(message, {
+        title: `Update Module. Item Deleted`,
         autoHideDelay: 10000,
         appendToast: append,
         solid: true,
