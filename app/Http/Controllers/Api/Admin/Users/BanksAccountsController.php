@@ -28,7 +28,10 @@ class BanksAccountsController extends Controller
         if ($request->isMethod("GET")) {
              if (Auth::user()->token_login == $token) {
                
-                $banksAccounts = BankAccount::with('bank')->orderBy('id', 'desc')->paginate(2);
+                $banksAccounts = BankAccount::with('bank')
+                                            ->orderBy('id', 'desc')
+                                            ->where('user_id', Auth::id())
+                                            ->paginate(2);
                 
                 // $trash = $this->getTrash($request);
                 $banks = Bank::orderBy('bank_name', 'desc')->get(['id', 'bank_name', 'code']);
