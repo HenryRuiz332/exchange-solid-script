@@ -79,9 +79,9 @@
                 email : '',
                 password : '',
                 token_login: ''
-           },
+            },
             remember : false,
-             validateForm: false,
+             
             pre: false
     	}),
     	computed:{
@@ -93,28 +93,8 @@
 
     	},
 		methods:{
-            ...mapActions({
-                signIn: 'auth/signIn'
-              }),
-            async submit () {
-                this.pre = true
-                await this.signIn(this.form)
-                this.pre = false
-              },
-	       	 validateAuth(){
-	       	 	
-                let queryUrl = "/login"
-              
-                axios.get(queryUrl)
-                .then(response => {
-                 
-                   console.log(response)
-                })
-                .catch(e => {
-                 
-                  console.log(e)
-                })
-            },
+            
+	       	 
 			changeRemember(value){
                 this.remember = value
             },

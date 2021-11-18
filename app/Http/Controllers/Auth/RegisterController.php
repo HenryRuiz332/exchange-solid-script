@@ -76,10 +76,10 @@ class RegisterController extends Controller
 
             $user->syncRoles('Guest');
 
-            // $user = User::with('roles')->where('id', $user->id)->first();
-            // $token = Str::random(40);
-            // $user->token_login = $token;
-            // $user->save();
+            $user = User::with('roles')->where('id', $user->id)->first();
+            $token = Str::random(40);
+            $user->token_login = $token;
+            $user->save();
             return  $user;
         } catch (Exception $e) {
             $user->forceDelete();

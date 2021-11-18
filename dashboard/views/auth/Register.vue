@@ -13,7 +13,7 @@
                                     <label for="exampleInputEmail1" class="mr-auto"  style="color:#009ADA">Nombre Completo</label>
                                     <input 
                                         v-model="form.name"
-                                        type="email" 
+                                        type="text" 
                                         class="form-control mb-0" 
                                         id="exampleInputEmail1" 
                                         placeholder="Nombre completo">
@@ -35,7 +35,7 @@
                                         type="password" 
                                         class="form-control mb-0" 
                                         id="exampleInputPassword1" 
-                                        placeholder="Password">
+                                        placeholder="Contraseña">
                                 </div>
                                  <div class="form-group text-left">
                                     <label for="exampleInputPassword1"  style="color:#009ADA">Confirmar Contraseña</label>
@@ -44,7 +44,7 @@
                                         type="password" 
                                         class="form-control mb-0" 
                                         id="exampleInputPassword1" 
-                                        placeholder="Password">
+                                        placeholder="Confirmar Contraseña">
                                 </div>
                                 <div class="d-inline-block w-100 text-left">
                                     <button 
@@ -104,42 +104,27 @@
 
     	},
 		methods:{
+                
+
             register(){
                 this.pre = true
-               axios.post('/register',  this.form)
+                axios.post('/register',  this.form)
                 .then(response => {
+                    axios.get('/get/user').then((response) => {
+                     
+                       
+                        let token =  response.data.token_login
+                        localStorage.setItem('session_app', token)
+                        localStorage.setItem('ID', response.data.id)
+                        let redirect = window.location.origin + '/my-account/dashboard/'+ token 
+                        window.location.replace(redirect);
+                       
 
-                    let redirect = window.location.origin + '/my-account/dashboard' 
-                    window.location.replace(redirect);
-               // let roles = response.data.user.roles
-               // let token =  response.data.token
-
-               //  if (roles.length>0) {
-               //      for(let u=0; u<roles.length; u++){ 
-               //        if (roles[u].name == 'Admin') {
-               //                let redirect = 'dashboard/main/' + token
-               //                localStorage.setItem('session_app', token)
-               //                // axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
-                             
-               //                window.location.replace(redirect);
-
-               //                break
-               //        }else{
-               //            alert('logeado como user');return
-               //            let redirect = window.location.origin + '/my-account/dashboard' 
-               //            window.location.replace(redirect);
-               //            break
-               //        }
-               //      }
-               //  }else{
-               //       alert('logeado como no tiene roles');return
-               //      let redirect = window.location.origin + '/my-account/dashboard' 
-               //      window.location.replace(redirect);
-                    
-               //  }
- 
-             
-              
+                    }).catch(() => {
+                       
+                    })
+                   
+   
           })
           .catch(e => {
                 this.pre = false
