@@ -14,6 +14,7 @@ import Users from '../views/admin/users/Users.vue';
 
 import Exchange from '../views/admin/exchange/Exchange.vue';
 import Commissions from '../views/admin/exchange/Commissions.vue';
+import Cryptocurriencies from '../views/admin/exchange/Cryptocurriencies.vue';
 
 
 import Direcciones from '../views/admin/users/Direcciones.vue';
@@ -59,6 +60,13 @@ const router = new VueRouter({
             path: '/dashboard/exchange/commissions/:token',
             name: 'commissions',
             component: Commissions,
+            props: true,
+            
+        },
+        {
+            path: '/dashboard/exchange/cryptocurriencies/:token',
+            name: 'cryptocurriencies',
+            component: Cryptocurriencies,
             props: true,
             
         },

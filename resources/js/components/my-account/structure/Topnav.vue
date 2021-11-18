@@ -258,11 +258,13 @@
                     .then(response => {
                      console.log(response)
                          if(response.status == 204){
-                              localStorage.removeItem('user_id')
-                               window.location.href = '/'
+                                localStorage.removeItem('ID')
+                                localStorage.removeItem('session_app')
+                                window.location.href = '/'
                          }else{
                               alert("no se recibio una respuesta 204")
-                              localStorage.removeItem('user_id')
+                              localStorage.removeItem('ID')
+                              localStorage.removeItem('session_app')
                               window.location.href = '/'
 
                          }    

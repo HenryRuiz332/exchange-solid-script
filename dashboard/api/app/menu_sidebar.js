@@ -17,9 +17,6 @@ export const menu_sidebar = {
                                    icon: 'fa fa-users',  
                               },
                          ]
-             
-             
-
                     },
 
                     {      
@@ -33,13 +30,19 @@ export const menu_sidebar = {
                                    idEvent: 'exchange',
                                    menu: 'Exchange',
                                    path: '/dashboard/exchange/'+ localStorage.getItem('session_app'),
-                                   icon: 'fa fa-rocket',  
+                                   icon: 'fa fa-exchange-alt',  
                               },
                               {   
                                    idEvent: 'exchange',
                                    menu: 'Commissions',
                                    path: '/dashboard/exchange/commissions/'+ localStorage.getItem('session_app'),
                                    icon: 'fa fa-calculator',  
+                              },
+                              {   
+                                   idEvent: 'exchange',
+                                   menu: 'Cryptocurriencies',
+                                   path: '/dashboard/exchange/cryptocurriencies/'+ localStorage.getItem('session_app'),
+                                   icon: 'fa fa-gem',  
                               },
                          ]
              

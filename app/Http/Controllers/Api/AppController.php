@@ -38,7 +38,7 @@ class AppController extends Controller
             $cities = City::get();
             
             //section resune appa 
-            $visitors = count(Visitors::get());
+            $visitors = 0;//count(Visitors::get());
             $usersRegistered = count(User::get(['id']));
 
 

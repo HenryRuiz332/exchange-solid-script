@@ -7,9 +7,12 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link" href="#hero">Home</a></li>
-          <li><a class="nav-link" href="#about">¿Quiénes Somos?</a></li>
-          <li><a class="nav-link" href="#services">Servicios</a></li>
+            @if(Request::path() == "/")
+                <li><a class="nav-link" href="#hero">Home</a></li>
+                <li><a class="nav-link" href="#about">¿Quiénes Somos?</a></li>
+                <li><a class="nav-link" href="#services">Servicios</a></li>
+                <li><a class="nav-link" href="#contact">Contacto</a></li>
+            @endif
           {{-- <li><a class="nav-link " href="#team">Team</a></li> --}}
           
           @if(Auth::user() != null)
@@ -38,11 +41,10 @@
                 </li>
                    
            @else
-               <li><a href="{{route('login')}}">Entrar</a></li>
-               <li><a href="{{route('register')}}">Registrarse</a></li>
+               <li><a class="getstarted scrollto" href="{{route('login')}}" target="_blank">Entrar</a></li>
+               <li><a class="getstarted scrollto" href="{{route('register')}}" target="_blank">Registrarse</a></li>
            @endif
-          <li><a class="nav-link" href="#contact">Contacto</a></li>
-          <li><a class="getstarted scrollto" href="/login">Exchange</a></li>
+          
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
