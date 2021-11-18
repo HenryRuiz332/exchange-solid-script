@@ -15,6 +15,7 @@ class CreateCryptocurrenciesTable extends Migration
     {
         Schema::create('cryptocurrencies', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
             $table->string('crypto');
             $table->longText('svg');
             $table->boolean('status');

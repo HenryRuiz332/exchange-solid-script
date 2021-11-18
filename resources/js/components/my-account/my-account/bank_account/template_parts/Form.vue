@@ -107,9 +107,10 @@
             </div>       
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-5">
-            <h4>Cuentas Bancarias / Pago Móvil <i class="fa fa-refresh" @click="getBanksAccounts"></i></h4>
+            <h4>Pago Móvil / Cuentas Bancarias </h4> 
             <b-spinner variant="outline-primary" type="grow" label="Loading" v-if="isloading"></b-spinner>
             <div>
+                <i class="fa fa-refresh" v-if="banksAccounts.length == 0" @click="getBanksAccounts"></i>
                 <small v-if="banksAccounts.length == 0">No tienes datos registrados</small>
             </div>
             <paginate id="pages" v-if="pagination.last_page > 1"
@@ -120,12 +121,12 @@
                 v-for="bank,i in banksAccounts" :key="i"
                 :header="bank.type">
                 <b-card-text v-show="bank.type == 'Pago Móvil'">
-                    Banco: {{ bank.bank.bank_name}}<br>
+                    Banco: {{ bank.bank.bank_name + ' - ' + bank.bank.code}}<br>
                     Documento: {{bank.document}}<br>
                     Teléfono: {{ bank.phone}}<br></b-card-text>
 
                  <b-card-text v-show="bank.type == 'Transferencia Bancaria'">
-                    Banco: {{ bank.bank.bank_name}}<br>
+                    Banco: {{ bank.bank.bank_name + ' - ' + bank.bank.code}}<br>
                     Titular: {{ bank.name_user_account}}<br>
                     Nro Cuenta: {{ bank.account_number}}<br>
                     Documento: {{bank.document}}<br>

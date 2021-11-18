@@ -16,6 +16,7 @@ export const cryptocurriencies = {
 
                formCryptocurriencies: new Form({
                     id: '',
+                    name: '',
                     crypto: '',
                     svg: '',
                     status: '',
@@ -27,7 +28,7 @@ export const cryptocurriencies = {
      },
      computed: {
           formTitle () {
-               return this.editIndexObj === -1 ? 'New Cryptocurriencies' : 'Edit Cryptocurriencies'
+               return this.editIndexObj === -1 ? 'New Cryptocurriencie' : 'Edit Cryptocurriencie'
           },
           titleCrud(){
                this.title = this.nameModule

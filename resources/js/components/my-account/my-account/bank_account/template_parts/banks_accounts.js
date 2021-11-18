@@ -20,7 +20,7 @@ export const banks_accounts = {
                     user_id : '',
                     bank_id : '',
                     document : '',
-                    type : '',
+                    type : 'Pago Móvil',
                     phone : '',
                }),
                showDelete: false,

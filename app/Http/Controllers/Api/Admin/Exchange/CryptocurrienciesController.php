@@ -62,6 +62,7 @@ class CryptocurrienciesController extends Controller
                    
                     $crypto = new Cryptocurrencie();
                     $crypto->svg = $request['svg'];
+                    $crypto->name = $request['name'];
                     $crypto->crypto = $request['crypto'];
                     $crypto->status = $status;
                     $crypto->saveOrFail();
