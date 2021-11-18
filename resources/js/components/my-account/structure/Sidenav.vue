@@ -28,16 +28,24 @@
 
                     <li class="nav-item">
                       <router-link class="nav-link" :to="'/my-account/dashboard/profile/bank-account/' + token">
-                        <i class="ni ni-bullet-list-67 text-default"></i>
+                        <i class="ni ni-building text-default"></i>
                         <span class="nav-link-text">Cuentas Bancarias</span>
                        </router-link>
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link" href="examples/map.html">
+                     <router-link class="nav-link" :to="'/my-account/dashboard/exchange/' + token">
                        
                         <i class="ni ni-planet text-orange"></i>
                         <span class="nav-link-text">Exchange</span>
+                      </router-link>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="examples/map.html">
+                       
+                        <i class="ni ni-support-16 text-primary"></i>
+                        <span class="nav-link-text">Soporte</span>
                       </a>
                     </li>
                    
