@@ -44,7 +44,7 @@
                 :editMode="editMode"
                 :updateBankAccount="updateBankAccount"
                 :deleteObj="deleteObj"
-                
+                :tb="tb"
                 />
         </div>
     </div>

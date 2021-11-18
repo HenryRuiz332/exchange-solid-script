@@ -42,7 +42,7 @@ export const banks_accounts = {
 
                },
 
-             
+               tb: ''
 
           }
      },
@@ -51,10 +51,11 @@ export const banks_accounts = {
           
      },
      mounted(){
-          this.getBanksAccounts()
+          let param = 'Pago Móvil'
+          this.getBanksAccounts(param)
      },
      methods:{
-          getBanksAccounts(){
+          getBanksAccounts(param){
                
                let getModule = 'banks-accounts/' + this.$attrs.token + '?page=' + this.pagination.current_page
 
@@ -62,14 +63,37 @@ export const banks_accounts = {
                .then(response => {
                     if (response.status == 200) {
                          this.banksAccounts = response.data.banksAccounts.data
+                         this.banks = []
                          let bnks = response.data.banks
                          for(let x = 0; x <bnks.length; x++){
-                              this.banks.push({
-                                   value: bnks[x].id,
-                                   text: bnks[x].bank_name
-                              })
+                              if(param == 'Pago Móvil'){
+                                   this.banks.push({
+                                        value: bnks[x].id,
+                                        text: bnks[x].bank_name
+                                   }) 
+                              }
+
+                              if(param == 'Transferencia Bancaria'){
+                                   if (bnks[x].bank_name == 'BANESCO-BANCO-UNIVERSAL') {
+                                        this.banks.push({
+                                             value: bnks[x].id,
+                                             text: bnks[x].bank_name
+                                        })  
+                                   }
+
+                                   if (bnks[x].bank_name == 'BANCO-PROVINCIAL-BBVA') {
+                                        this.banks.push({
+                                             value: bnks[x].id,
+                                             text: bnks[x].bank_name
+                                        })  
+                                   }
+
+                               }      
                          }
+
+
                          this.pagination = response.data.banksAccounts
+                            
                     }
                   
                })

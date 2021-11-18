@@ -18,7 +18,49 @@
             <div>
                 <b-tabs active-nav-item-class="text-uppercase " active-tab-class=""
                     content-class="mt-3">
-                        <b-tab title="Cuenta Bancaria" active @click="formBankAccountMovil.type='Transferencia Bancaria'">
+                        <b-tab title="Pago Móvil" active @click="selectedMovil">
+                            <b-form   @submit.prevent="saveBankAccountMovil">
+                                <label>Seleccione un Banco:</label>
+                                <b-form-select v-model="formBankAccountMovil.bank_id" :options="banks" value="1" class="mb-3">
+                                     
+                                    <template #first>
+                                        <b-form-select-option value="id" disabled>-- Elija un Banco --</b-form-select-option>
+                                    </template>
+                                  
+                                 
+                                </b-form-select>
+
+                                <b-form-group id="input-group-document" label="Documento del Titular de la cuenta:" label-for="input-document" :description="errors.errors.document ? errors.errors.document[0] : null">
+                                        <b-form-input
+                                            id="input-document"
+                                            v-model="formBankAccountMovil.document"
+                                            required></b-form-input>
+                                    </b-form-group>
+
+                                <i class="fa fa-info" id="popover-phone" variant="outline-primary"></i>
+                                <b-form-group id="input-group-phone" label="Teléfono:" label-for="input-phone" :description="errors.errors.phone ? errors.errors.phone[0] : null">
+                                        <b-form-input
+                                            id="input-phone"
+                                            v-model="formBankAccountMovil.phone"
+                                            required></b-form-input>
+                                </b-form-group>
+                                
+                                <b-popover
+                                  target="popover-phone"
+                                  title="Info"
+                                  triggers="hover focus"
+                                  content="Coloque el número telefónico asociado a su pago móvil de cuenta bancaria."
+                                ></b-popover>
+
+                                <b-button type="button" variant="outline-danger"  @click="cleanFormBankAccount">Limpiar</b-button>
+                                    <b-button type="submit" variant="outline-primary" v-show="!this.formBankAccountMovil.progress">Guardar</b-button>
+
+                                    <b-spinner variant="outline-primary" type="grow" label="Loading" v-if="formBankAccountMovil.progress"></b-spinner>
+                            </b-form>
+                        </b-tab>
+
+                        <b-tab title="Cuenta Bancaria"  @click="selectedTr">
+                            <small>Para Transferencias Bancarias nuestro sistema maneja dos bancos nacionales (BBVA Provincial y Banesco) para que las mismas sean efectivas inmediatamente.</small>
                             <b-form  @submit.prevent="saveBankAccount">
                                 <label>Seleccione un Banco:</label>
                                 <b-form-select v-model="formBankAccount.bank_id" :options="banks" class="mb-3">
@@ -61,40 +103,6 @@
                        
                             </b-form>  
                         </b-tab>
-                        
-                        <b-tab title="Pago Móvil" @click="formBankAccountMovil.type='Pago Móvil'">
-                            <b-form   @submit.prevent="saveBankAccountMovil">
-                                <label>Seleccione un Banco:</label>
-                                <b-form-select v-model="formBankAccountMovil.bank_id" :options="banks" value="1" class="mb-3">
-                                     
-                                    <template #first>
-                                        <b-form-select-option value="id" disabled>-- Elija un Banco --</b-form-select-option>
-                                    </template>
-                                  
-                                 
-                                </b-form-select>
-
-                                <b-form-group id="input-group-document" label="Documento del Titular de la cuenta:" label-for="input-document" :description="errors.errors.document ? errors.errors.document[0] : null">
-                                        <b-form-input
-                                            id="input-document"
-                                            v-model="formBankAccountMovil.document"
-                                            required></b-form-input>
-                                    </b-form-group>
-
-                                <b-form-group id="input-group-phone" label="Teléfono:" label-for="input-phone" :description="errors.errors.phone ? errors.errors.phone[0] : null">
-                                        <b-form-input
-                                            id="input-phone"
-                                            v-model="formBankAccountMovil.phone"
-                                            required></b-form-input>
-                                </b-form-group>
-
-                                <b-button type="button" variant="outline-danger"  @click="cleanFormBankAccount">Limpiar</b-button>
-                                    <b-button type="submit" variant="outline-primary" v-show="!this.formBankAccountMovil.progress">Guardar</b-button>
-
-                                    <b-spinner variant="outline-primary" type="grow" label="Loading" v-if="formBankAccountMovil.progress"></b-spinner>
-                            </b-form>
-                        </b-tab>
-                        
                 </b-tabs>
             </div>       
         </div>
@@ -174,6 +182,7 @@
             updateBankAccount: Function,
 
             deleteObj: Function,
+            tb: String
            
            
         },
@@ -193,7 +202,18 @@
             
         },
         methods:{
+            selectedTr(){
+                this.formBankAccountMovil.type = 'Transferencia Bancaria'
+                this.getBanksAccounts(this.formBankAccountMovil.type)
 
+
+            },
+            selectedMovil(){
+                this.formBankAccountMovil.type='Pago Móvil'
+                this.getBanksAccounts(this.formBankAccountMovil.type)
+               
+
+            }
         }
     };
 </script>

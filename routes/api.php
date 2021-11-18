@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -69,6 +69,18 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
                     Route::put('/exchange/commissions/{id}/{token}', 'CommissionsController@update');
                     Route::delete('exchange/commissions/{id}/{token}', 'CommissionsController@destroy');
                     Route::post('/exchange/commissions-deletes/{token}', 'CommissionsController@trashAll');
+                    // Route::post('/exchange/comissions-trash/{id}', 'ComissionsController@sendTrash');
+                    // Route::post('/exchange/comissions-restore/{id}', 'ComissionsController@restore');
+                   
+                });
+
+                Route::group(['namespace' => 'Exchange'], function(){
+                    Route::get('/exchange/cryptocurriencies/{token}', 'CryptocurrienciesController@index');
+                    Route::get('/exchange/cryptocurriencies/{id}/{token}', 'CryptocurrienciesController@show');
+                    Route::post('/exchange/cryptocurriencies/{token}', 'CryptocurrienciesController@store');
+                    Route::put('/exchange/cryptocurriencies/{id}/{token}', 'CryptocurrienciesController@update');
+                    Route::delete('exchange/cryptocurriencies/{id}/{token}', 'CryptocurrienciesController@destroy');
+                    Route::post('/exchange/cryptocurriencies-deletes/{token}', 'CryptocurrienciesController@trashAll');
                     // Route::post('/exchange/comissions-trash/{id}', 'ComissionsController@sendTrash');
                     // Route::post('/exchange/comissions-restore/{id}', 'ComissionsController@restore');
                    
