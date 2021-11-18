@@ -71,11 +71,8 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
                     Route::post('/exchange/commissions-deletes/{token}', 'CommissionsController@trashAll');
                     // Route::post('/exchange/comissions-trash/{id}', 'ComissionsController@sendTrash');
                     // Route::post('/exchange/comissions-restore/{id}', 'ComissionsController@restore');
-                   
-                });
 
-                Route::group(['namespace' => 'Exchange'], function(){
-                    Route::get('/exchange/cryptocurriencies/{token}', 'CryptocurrienciesController@index');
+                    Route::get('/exchange/{token}', 'CryptocurrienciesController@index');
                     Route::get('/exchange/cryptocurriencies/{id}/{token}', 'CryptocurrienciesController@show');
                     Route::post('/exchange/cryptocurriencies/{token}', 'CryptocurrienciesController@store');
                     Route::put('/exchange/cryptocurriencies/{id}/{token}', 'CryptocurrienciesController@update');
@@ -83,8 +80,18 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
                     Route::post('/exchange/cryptocurriencies-deletes/{token}', 'CryptocurrienciesController@trashAll');
                     // Route::post('/exchange/comissions-trash/{id}', 'ComissionsController@sendTrash');
                     // Route::post('/exchange/comissions-restore/{id}', 'ComissionsController@restore');
+
+
+                    Route::get('/exchange/{token}', 'ExchangeController@index');
+                    Route::get('/exchange/{id}/{token}', 'ExchangeController@show');
+                    Route::post('/exchange/{token}', 'ExchangeController@store');
+                    Route::put('/exchange/{id}/{token}', 'ExchangeController@update');
+                    Route::delete('exchange/{id}/{token}', 'ExchangeController@destroy');
+                    Route::post('/exchange/{token}', 'ExchangeController@trashAll');
+                    // Route::post('/exchange/comissions-trash/{id}', 'ComissionsController@sendTrash');
+                    // Route::post('/exchange/comissions-restore/{id}', 'ComissionsController@restore');
                    
-                });
+                }); 
                
             });
             
