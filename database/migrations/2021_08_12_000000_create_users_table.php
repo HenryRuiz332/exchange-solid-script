@@ -39,11 +39,11 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('country_id')->references('id')->on('countries')->onUpdate('cascade')->onDelete('set null');
-            $table->foreign('state_id')->references('id')->on('states')->onUpdate('cascade')->onDelete('set null');
-            $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('set null');
-            $table->foreign('status_model_id')->references('id')->on('status_models')->onUpdate('cascade')->onDelete('set null');
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
+            $table->foreign('country_id')->references('id')->on('countries')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('state_id')->references('id')->on('states')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('status_model_id')->references('id')->on('status_models')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
            
         });
     }

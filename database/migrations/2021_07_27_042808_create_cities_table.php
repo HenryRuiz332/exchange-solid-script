@@ -30,9 +30,9 @@ class CreateCitiesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('country_id')->references('id')->on('countries')->onUpdate('cascade')->onDelete('set null');
-            $table->foreign('state_id')->references('id')->on('states')->onUpdate('cascade')->onDelete('set null');
-            $table->foreign('status_model_id')->references('id')->on('status_models')->onUpdate('cascade')->onDelete('set null');
+            $table->foreign('country_id')->references('id')->on('countries')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('state_id')->references('id')->on('states')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('status_model_id')->references('id')->on('status_models')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

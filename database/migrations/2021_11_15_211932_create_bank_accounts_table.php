@@ -25,8 +25,8 @@ class CreateBankAccountsTable extends Migration
             $table->string('phone', 13)->nullable()->comment('Validate phone in frontend and backend');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
-            $table->foreign('bank_id')->references('id')->on('banks')->onUpdate('cascade')->onDelete('set null');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('bank_id')->references('id')->on('banks')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

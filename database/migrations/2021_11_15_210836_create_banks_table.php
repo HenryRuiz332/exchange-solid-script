@@ -21,7 +21,7 @@ class CreateBanksTable extends Migration
             $table->string('code');
             $table->timestamps();
 
-            $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('set null');
+            $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
