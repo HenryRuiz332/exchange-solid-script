@@ -28,7 +28,7 @@
 
                     <li class="nav-item">
                       <router-link class="nav-link" :to="'/my-account/dashboard/profile/bank-account/' + token">
-                        <i class="ni ni-building text-default"></i>
+                        <i class="ni ni-building text-info"></i>
                         <span class="nav-link-text">Cuentas Bancarias</span>
                        </router-link>
                     </li>
@@ -168,7 +168,7 @@
 <style type="text/css">
     .navbar-vertical.navbar-expand-xs .navbar-nav > .nav-item > .nav-link.active {
 
-      background: #009ADA;
+      background: #171923;
       color: white;
       transition: ease-in-out .4s all ;
     }

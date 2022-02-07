@@ -22,7 +22,9 @@ Route::group(['prefix' => 'v1'], function(){
 
 });
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-      return $user = User::with('roles')->where('id', $request->user()->id)->first();
+     return $user = User::with('roles')->where('id', $request->user()->id)->first();
+
+
 });
 
 
@@ -57,6 +59,9 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
                     Route::put('/banks-accounts/{id}/{token}', 'BanksAccountsController@update');
                     Route::delete('/banks-accounts/{id}/{token}', 'BanksAccountsController@destroy');
                     Route::post('/banks-accounts-deletes/{id}/{token}', 'BanksAccountsController@trashAll');
+
+
+                    Route::get('/my-dashboard/{token}', 'DashboardCustomerController@index');
                    
                 });
 
@@ -88,6 +93,8 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
                     Route::put('/exchange/{id}/{token}', 'ExchangeController@update');
                     Route::delete('exchange/{id}/{token}', 'ExchangeController@destroy');
                     Route::post('/exchange/{token}', 'ExchangeController@trashAll');
+
+                    Route::post('/exchange/api-call/{token}', 'ExchangeController@apiCallExchange');
                     // Route::post('/exchange/comissions-trash/{id}', 'ComissionsController@sendTrash');
                     // Route::post('/exchange/comissions-restore/{id}', 'ComissionsController@restore');
                    

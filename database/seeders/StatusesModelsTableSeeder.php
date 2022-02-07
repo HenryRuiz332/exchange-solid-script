@@ -40,21 +40,21 @@ class StatusesModelsTableSeeder extends Seeder
 
         //Status Posts
         $status = new StatusModel;
-        $status->name = 'DRAFT';
+        $status->name = 'Processing';
         $status->boolean = NULL;
-        $status->table_name = 'posts';
+        $status->table_name = 'exchanges';
         $status->save();
 
         $status = new StatusModel;
-        $status->name = 'PUBLISHED';
+        $status->name = 'Revision';
         $status->boolean = NULL;
-        $status->table_name = 'posts';
+        $status->table_name = 'exchanges';
         $status->save();
 
         $status = new StatusModel;
-        $status->name = 'REVISION';
+        $status->name = 'Successfull';
         $status->boolean = NULL;
-        $status->table_name = 'posts';
+        $status->table_name = 'exchanges';
         $status->save();
     }
 }

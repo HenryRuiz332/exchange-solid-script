@@ -7,13 +7,17 @@
           <!-- Main content -->
           <div class="main-content" id="panel">
             <!-- Topnav -->
-            <Topnav :token="token"/>
+            <Topnav :token="token" :name="name"  />
             <!-- Header -->
             <!-- Header -->
             
             <!-- Page content -->
             
-            <router-view :isloading="isloading" :token="token" :IDuser="IDuser"></router-view>
+            <router-view 
+               :isloading="isloading" 
+               :token="token" 
+               :IDuser="IDuser"
+               ></router-view>
           </div>
     </div>
 </template>
@@ -39,12 +43,27 @@
                isloading: function() {
                     return this.$store.getters.getloading
                },
+               name(){
+                    return localStorage.name
+               }
           },
           mounted() {
-            
+               this.user()
           },
           methods:{
-            
+               user(){
+                    axios.get('get/user', {
+                      params: {
+                        key: 'value',
+                      },
+                    }).then((response) => {
+                         localStorage.setItem('name', response.data.name)
+                    }).catch((error) => {
+                      console.error(error);
+                    }).finally(() => {
+                      
+                    });
+               }
           }
     };
 </script>

@@ -5,12 +5,12 @@
                 <div class="row no-gutters">
                     <div class="col-sm-12 col-md-6 align-self-center" style="margin-top: -5vw">
                         <div class="sign-in-from text-left">
-                            <h1 class="mb-0" style="color:#009ADA">Iniciar Sesión</h1>
+                            <h1 class="mb-0" style="color:#171923">Iniciar Sesión</h1>
                           <!--   <p>Enter your email address and password to access admin panel.</p> -->
                             <form class="mt-4" @submit.prevent="submit" >
 
                                 <div class="form-group text-left">
-                                    <label for="exampleInputEmail1" class="mr-auto"  style="color:#009ADA">Email</label>
+                                    <label for="exampleInputEmail1" class="mr-auto"  style="color:#171923">Email</label>
                                     <input 
                                         v-model="form.email"
                                         type="email" 
@@ -19,7 +19,7 @@
                                         placeholder="Correo Electrónico">
                                 </div>
                                 <div class="form-group text-left">
-                                    <label for="exampleInputPassword1"  style="color:#009ADA">Contraseña</label>
+                                    <label for="exampleInputPassword1"  style="color:#171923">Contraseña</label>
                                     <a href="#" class="float-right">¿Has olvidado tu contraseña?</a>
                                     <input 
                                         v-model="form.password"
@@ -35,7 +35,7 @@
                                             class="custom-control-input" 
                                             id="customCheck1"
                                             @change="changeRemember">
-                                        <label class="custom-control-label" for="customCheck1"  style="color:#009ADA">Recordar</label>
+                                        <label class="custom-control-label" for="customCheck1"  style="color:#171923">Recordar</label>
                                     </div>
                                     <button 
                                         :disabled="validateForm"
@@ -81,7 +81,7 @@
                 token_login: ''
             },
             remember : false,
-             
+            validateForm: false,
             pre: false
     	}),
     	computed:{
@@ -94,7 +94,14 @@
     	},
 		methods:{
             
-	       	 
+	       	  ...mapActions({
+                signIn: 'auth/signIn'
+              }),
+            async submit () {
+                this.pre = true
+                await this.signIn(this.form)
+                this.pre = false
+              },
 			changeRemember(value){
                 this.remember = value
             },

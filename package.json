@@ -26,13 +26,18 @@
         "vue": "^2.6.12",
         "vue-loader": "^15.9.8",
         "vue-route": "^1.5.1",
-        "vue-template-compiler": "^2.6.12"
+        "vue-template-compiler": "^2.6.12",
+        "@metamask/eslint-config": "^2.0.0",
+        "eslint": "^6.8.0",
+        "eslint-plugin-import": "^2.20.1",
+        "eslint-plugin-json": "^2.0.1",
+        "static-server": "^2.2.1"
     },
     "dependencies": {
-        "bootstrap-vue": "^2.21.2",
         "@editorjs/editorjs": "^2.22.2",
         "@editorjs/header": "^2.6.1",
         "@editorjs/image": "^2.6.1",
+        "bootstrap-vue": "^2.21.2",
         "laraberg-vue": "^1.0.4",
         "v-form": "^2.3.5",
         "vform": "^2.1.1",
@@ -40,6 +45,7 @@
         "vue-router": "^3.5.2",
         "vue-snotify": "^3.2.1",
         "vuetify": "^2.5.8",
-        "vuex": "^3.6.2"
+        "vuex": "^3.6.2",
+        "@metamask/onboarding": "^1.0.1"
     }
 }

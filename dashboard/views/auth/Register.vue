@@ -6,11 +6,11 @@
                 <div class="row no-gutters">
                     <div class="col-sm-12 col-md-6 align-self-center" style="margin-top: -5vw">
                         <div class="sign-in-from text-left">
-                            <h1 class="mb-0" style="color:#009ADA">Registrarse</h1>
+                            <h1 class="mb-0" style="color:#171923">Registrarse</h1>
                           <!--   <p>Enter your email address and password to access admin panel.</p> -->
                             <form class="mt-4" @submit.prevent="register" >
                                 <div class="form-group text-left">
-                                    <label for="exampleInputEmail1" class="mr-auto"  style="color:#009ADA">Nombre Completo</label>
+                                    <label for="exampleInputEmail1" class="mr-auto"  style="color:#171923">Nombre Completo</label>
                                     <input 
                                         v-model="form.name"
                                         type="text" 
@@ -19,7 +19,7 @@
                                         placeholder="Nombre completo">
                                 </div>
                                 <div class="form-group text-left">
-                                    <label for="exampleInputEmail1" class="mr-auto"  style="color:#009ADA">Email</label>
+                                    <label for="exampleInputEmail1" class="mr-auto"  style="color:#171923">Email</label>
                                     <input 
                                         v-model="form.email"
                                         type="email" 
@@ -29,7 +29,7 @@
                                 </div>
                                
                                 <div class="form-group text-left">
-                                    <label for="exampleInputPassword1"  style="color:#009ADA">Contraseña</label>
+                                    <label for="exampleInputPassword1"  style="color:#171923">Contraseña</label>
                                     <input 
                                         v-model="form.password"
                                         type="password" 
@@ -38,7 +38,7 @@
                                         placeholder="Contraseña">
                                 </div>
                                  <div class="form-group text-left">
-                                    <label for="exampleInputPassword1"  style="color:#009ADA">Confirmar Contraseña</label>
+                                    <label for="exampleInputPassword1"  style="color:#171923">Confirmar Contraseña</label>
                                     <input 
                                         v-model="form.passwordConfirm"
                                         type="password" 

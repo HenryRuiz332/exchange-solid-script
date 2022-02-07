@@ -19,7 +19,12 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>{{ config('app.name') }}</h3>
+           <div>
+              <a href="/" class="logo float-left">
+                <img src="favicon.png" alt="SolidScript Exchange" class="img-fluid" width="20">
+              </a>
+              <h3>{{ config('app.name') }}</h3>
+           </div>
             <p>
               <strong>Phone:</strong> +584142823998<br>
               <strong>Email:</strong> info@solid-script.work<br>
@@ -27,7 +32,7 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Login</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Register</a></li>
@@ -49,7 +54,7 @@
 
             <div class="col-lg-3 col-md-6 footer-links">
             <h4>Redes Sociales</h4>
-            <p>Siguenos en nustra redes sociales para informarte de nuestro ecosistema</p>
+            <p>Siguenos en nustra redes sociales para informarte de nuestro ecosistema y nuevas oportunidades.</p>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
              {{--  <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> --}}

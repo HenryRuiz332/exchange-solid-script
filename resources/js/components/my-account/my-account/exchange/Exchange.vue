@@ -26,11 +26,29 @@
             </div>
           </div>
         </div>
+
+         <div class="container-fluid mt-3">
+            <FormExchange 
+                :cryptos="cryptos"
+                :banksAccounts="banksAccounts"
+                :formExchange="formExchange"
+               
+                />
+        </div>
     </div>
 </template>
 
 <script>
+    import FormExchange from './template_parts/FormExchange'
+    import { exchange } from './template_parts/exchange' 
+
     export default {
+        mixins: [exchange],
+
+        components: {
+            FormExchange
+        },
+
         data:() =>({
             
         }),
@@ -41,7 +59,9 @@
             
         },
         methods:{
-          
+            iniExchange(){
+
+            }
         }
     };
 </script>

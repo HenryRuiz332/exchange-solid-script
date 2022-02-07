@@ -27,7 +27,7 @@
       position: fixed;
       top: calc(50% - 30px);
       left: calc(50% - 30px);
-      border: 6px solid #ECD00A;
+      border: 6px solid #FBC151;
       border-top-color: #fff;
       border-bottom-color: #fff;
       border-radius: 50%;

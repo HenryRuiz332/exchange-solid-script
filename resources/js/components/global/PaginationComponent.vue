@@ -93,8 +93,8 @@
 	.page-item.active .page-link {
 	    z-index: 3;
 	    color: #000;
-	    background-color: #009ADA!important;
-	    border-color: #009ADA;
+	    background-color: #171923!important;
+	    border-color: #171923;
 	    cursor:  auto;
 
 	}

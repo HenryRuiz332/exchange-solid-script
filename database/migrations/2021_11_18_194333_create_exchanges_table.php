@@ -19,9 +19,9 @@ class CreateExchangesTable extends Migration
             $table->id();
             $table->unsignedBigInteger("user_id");
             $table->unsignedBigInteger("commission_id");
-            $table->unsignedBigInteger("crypto_id");
-            $table->unsignedBigInteger("status_model_id");
-            $table->unsignedBigInteger("money_id");
+            $table->unsignedBigInteger("crypto_id")->nullable();
+            $table->unsignedBigInteger("status_model_id")->nullable();
+            $table->unsignedBigInteger("money_id")->nullable();
             $table->unsignedBigInteger("bank_account_id");
             $table->longText("contract");
             $table->string("note");

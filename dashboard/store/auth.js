@@ -55,10 +55,10 @@ export default {
                       }else{
                          
                           let redirect = window.location.origin + '/my-account/dashboard/'  + token
-                          localStorage.setItem('ID', response.data.user.id)
-                           localStorage.setItem('session_app', token)
-                          window.location.replace(redirect);
-                          break
+                            localStorage.setItem('ID', response.data.user.id)
+                            localStorage.setItem('session_app', token)
+                            window.location.replace(redirect);
+                            break
                       }
                     }
                 }else{

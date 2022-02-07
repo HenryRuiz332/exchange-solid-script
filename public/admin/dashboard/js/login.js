@@ -2346,14 +2346,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }, _callee);
       }))();
     },
-    validateAuth: function validateAuth() {
-      var queryUrl = "/login";
-      axios.get(queryUrl).then(function (response) {
-        console.log(response);
-      })["catch"](function (e) {
-        console.log(e);
-      });
-    },
     changeRemember: function changeRemember(value) {
       this.remember = value;
     }
@@ -2395,18 +2387,32 @@ __webpack_require__.r(__webpack_exports__);
     return {
       carousel: [{
         id: 1,
-        src: '/vendors/undraw/myapp.svg',
-        "class": "img-fluid mb-4",
-        alt: 'Sing in Prueba 789',
-        h4: 'Sign In Prueba 789 App',
-        p: ''
+        src: '/vendors/undraw/businessman.svg',
+        "class": " mb-4",
+        alt: 'Iniciar Sesión SolidScript Exchange',
+        // h4 : 'Inicia Sesión y comienza a intercambiar',
+        p: 'Inicia Sesión y comienza a intercambiar'
       }, {
         id: 2,
-        src: '/vendors/undraw/newsletter.svg',
-        "class": "img-fluid mb-4",
-        alt: 'Sing in Prueba 789',
-        h4: 'Sign In Prueba 789 App',
-        p: ''
+        src: '/vendors/undraw/contract.svg',
+        "class": " mb-4",
+        alt: 'Seguridad ante todo',
+        // h4 : '',
+        p: 'Tus datos estan seguros'
+      }, {
+        id: 3,
+        src: '/vendors/undraw/register_banck_account.svg',
+        "class": " mb-4",
+        alt: 'Registra cuents bancarias',
+        // h4 : '',
+        p: 'Registra alguna cuenta bancaria para recibir pagos'
+      }, {
+        id: 4,
+        src: '/vendors/undraw/confianza.svg',
+        "class": " mb-4",
+        alt: 'Confianza',
+        // h4 : '',
+        p: 'Nuestra empresa crece cada día en base a tu confianza'
       }]
     };
   },
@@ -2440,7 +2446,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#preloader:before {\n  content: \"\";\n  position: fixed;\n  top: calc(50% - 30px);\n  left: calc(50% - 30px);\n  border: 6px solid #ECD00A;\n  border-top-color: #fff;\n  border-bottom-color: #fff;\n  border-radius: 50%;\n  width: 60px;\n  height: 60px;\n  -webkit-animation: animate-preloader 1s linear infinite;\n  animation: animate-preloader 1s linear infinite;\n}\n@-webkit-keyframes animate-preloader {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@keyframes animate-preloader {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#preloader:before {\n  content: \"\";\n  position: fixed;\n  top: calc(50% - 30px);\n  left: calc(50% - 30px);\n  border: 6px solid #FBC151;\n  border-top-color: #fff;\n  border-bottom-color: #fff;\n  border-radius: 50%;\n  width: 60px;\n  height: 60px;\n  -webkit-animation: animate-preloader 1s linear infinite;\n  animation: animate-preloader 1s linear infinite;\n}\n@-webkit-keyframes animate-preloader {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@keyframes animate-preloader {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2464,7 +2470,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.sign-in-detail {\n   \t\tbackground:  #009ADA!important;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.sign-in-detail {\n   \t\tbackground:  #171923!important;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21367,7 +21373,7 @@ var render = function() {
                 _c("div", { staticClass: "sign-in-from text-left" }, [
                   _c(
                     "h1",
-                    { staticClass: "mb-0", staticStyle: { color: "#009ADA" } },
+                    { staticClass: "mb-0", staticStyle: { color: "#171923" } },
                     [_vm._v("Iniciar Sesión")]
                   ),
                   _vm._v(" "),
@@ -21388,7 +21394,7 @@ var render = function() {
                           "label",
                           {
                             staticClass: "mr-auto",
-                            staticStyle: { color: "#009ADA" },
+                            staticStyle: { color: "#171923" },
                             attrs: { for: "exampleInputEmail1" }
                           },
                           [_vm._v("Email")]
@@ -21425,7 +21431,7 @@ var render = function() {
                         _c(
                           "label",
                           {
-                            staticStyle: { color: "#009ADA" },
+                            staticStyle: { color: "#171923" },
                             attrs: { for: "exampleInputPassword1" }
                           },
                           [_vm._v("Contraseña")]
@@ -21526,7 +21532,7 @@ var render = function() {
                                 "label",
                                 {
                                   staticClass: "custom-control-label",
-                                  staticStyle: { color: "#009ADA" },
+                                  staticStyle: { color: "#171923" },
                                   attrs: { for: "customCheck1" }
                                 },
                                 [_vm._v("Recordar")]
@@ -21651,7 +21657,12 @@ var render = function() {
           return _c("div", { key: index, staticClass: "item" }, [
             _c("img", {
               class: item.class,
-              attrs: { src: item.src, alt: item.alt, width: "222" }
+              attrs: {
+                src: item.src,
+                alt: item.alt,
+                width: "300",
+                height: "300"
+              }
             }),
             _vm._v(" "),
             _c("h4", { staticClass: "mb-1 text-white" }, [

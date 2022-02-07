@@ -1,16 +1,15 @@
 <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
-
+        <a href="/"  class="logo "><img src="favicon.png" alt="SolidScript Exchange" class="img-fluid"></a>
       <h1 class="logo me-auto"><a href="/">{{ config('app.name') }}</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+     
 
       <nav id="navbar" class="navbar">
         <ul>
             @if(Request::path() == "/")
                 <li><a class="nav-link" href="#hero">Home</a></li>
                 <li><a class="nav-link" href="#about">¿Quiénes Somos?</a></li>
-                <li><a class="nav-link" href="#services">Servicios</a></li>
+                <li><a class="nav-link" href="#features">Servicios</a></li>
                 <li><a class="nav-link" href="#contact">Contacto</a></li>
             @endif
           {{-- <li><a class="nav-link " href="#team">Team</a></li> --}}
@@ -18,10 +17,10 @@
           @if(Auth::user() != null)
 
                <li class="dropdown">
-                    <a href="#"><span>Hola {{ Auth::user()->name }}</span> <i class="bi bi-chevron-down"></i></a>
+                    <a href="#"><span>{{ Auth::user()->name }}</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li>
-                            <a class="dropdown-item" href="/my-account/dashboard">
+                            <a class="dropdown-item" href="/my-account/dashboard/">
                                {{-- <i class="fa fa-user-circle"></i> --}} My Account
                             </a>
                         </li>

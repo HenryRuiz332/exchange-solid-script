@@ -17,3 +17,29 @@
     </div>
 
   </section><!-- End Hero -->
+ 
+
+    <div class="waveTop1 css-1rkknkd"></div>
+   
+  <style type="text/css">
+    .css-1rkknkd {
+    background-image: url(/hr.svg);
+}
+.waveTop1, .waveTop3 {
+   
+    width: 100%;
+    height: 198px;
+    left: 0;
+    background-repeat: no-repeat;
+    z-index: 100;
+    background-size: 100%;
+}
+.waveTop1 {
+    top: -85px!important;
+    position: relative;
+    transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    margin-left: auto;
+    margin-right: auto;
+}
+  </style>

@@ -31,7 +31,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    // protected $redirectTo = '/dashboard-tecnocosmetic/main/mariquera';
+     protected $redirectTo = '/my-account/dashboard/mariquera';
 
     /**
      * Create a new controller instance.

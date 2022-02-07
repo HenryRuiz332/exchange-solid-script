@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Session;
 use App\Models\Admin\Posts\Post;
 use Carbon\Carbon;
 use App\Traits\Methods;
+use App\Models\Admin\Exchange\Cryptocurrencie;
+use App\Models\Admin\Exchange\Commission;
 
 
 class WebController extends Controller
@@ -17,11 +19,11 @@ class WebController extends Controller
 
         if ($request->isMethod('get')) {
             // $visitors = Methods::visitors();
-       
-            
+            $cryptos = Cryptocurrencie::orderBy('id', 'desc')->get();
+            $commission = Commission::orderBy('id', 'desc')->first();
        
 
-            return  view('web.index');
+            return  view('web.index', compact('cryptos', 'commission'));
         }else{
             return response()->json([
                 'info' => 'This method not is supported'

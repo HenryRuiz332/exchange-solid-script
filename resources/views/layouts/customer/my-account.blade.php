@@ -21,6 +21,7 @@
     .text-muted{
         color: red !important;
     }
+    
   </style>
 </head>
 
@@ -45,6 +46,13 @@
   <script src="{{ asset('vendors/argon/assets/js/argon.js?v=1.2.0') }}"></script>
 
   <script src="{{ asset('frontend/js/app.js') }}"></script>
-</body>
 
+
+</body>
+<style type="text/css">
+  .bg-primary {
+      background-color: #171923!important;
+      background:  #171923!important;
+    }
+</style>
 </html>

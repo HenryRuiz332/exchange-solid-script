@@ -27,7 +27,7 @@ Route::group([], function() {
 });
 
 Route::group([], function() {
-   Route::get('/my-account/{any}', [App\Http\Controllers\Web\Customer\CustomerController::class, 'index'])->where('any', '.*')->fallback()->name('customer.index');
+   Route::get('/my-account/{any}', [App\Http\Controllers\Web\Customer\CustomerController::class, 'index'])->where('any', '.*')->fallback()->name('customer.index')->middleware('auth:sanctum');
 });
 
 
