@@ -35,7 +35,7 @@
     background-size: 100%;
 }
 .waveTop1 {
-    top: -85px!important;
+    top: -100px!important;
     position: relative;
     transform: scaleX(-1);
     -webkit-transform: scaleX(-1);

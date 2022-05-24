@@ -59,7 +59,7 @@
     </section> --}}<!-- End Cliens Section -->
 
     <!-- ======= About Us Section ======= -->
-    <section id="about" class="about" style="background: #2D3748; top:-85; position: relative;">
+    <section id="about" class="about" style="background: #2D3748; top:-100; position: relative;">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
